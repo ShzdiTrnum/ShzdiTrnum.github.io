@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turrnum Shahzadi</title>
+<meta name="description" content="Turrnum Shahzadi, Ph.D. candidate at Tokyo Metropolitan University. Deep learning and probabilistic models for medical image and video analysis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --text:#1f2328; --muted:#5c6470; --line:#e6e8eb; --soft:#f5f7f9;
+  --accent:#1a5fb4; --accent2:#0e7c86; --badge-bg:#eaf2fc; --badge-tx:#1a5fb4;
+  --oral-bg:#fff1e5; --oral-tx:#b45309;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0f1216; --text:#e6e8eb; --muted:#9aa3ad; --line:#252a31; --soft:#161a20;
+         --accent:#6ea8fe; --accent2:#4fd1c5; --badge-bg:#1a2636; --badge-tx:#8bb9ff;
+         --oral-bg:#33240f; --oral-tx:#f6ad55; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Lato,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+.page{max-width:860px;margin:0 auto;padding:0 20px}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topbar .page{display:flex;align-items:center;justify-content:space-between;height:54px;gap:16px}
+.brand{font-weight:700;color:var(--text);white-space:nowrap}
+.menu{display:flex;gap:18px;overflow-x:auto;font-size:15px}
+.menu a{color:var(--muted);white-space:nowrap} .menu a:hover{color:var(--accent);text-decoration:none}
+@media (max-width:640px){.brand{display:none}.topbar .page{justify-content:flex-start}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 200px;gap:36px;align-items:center;padding:48px 0 36px}
+.hero h1{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:clamp(30px,5vw,40px);margin:0 0 4px;letter-spacing:-.3px}
+.hero .title{color:var(--muted);margin:0 0 16px;font-size:17px}
+.hero p{margin:0 0 12px}
+.photo{width:200px;height:200px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#1a5fb4,#0e7c86);display:flex;align-items:center;justify-content:center;color:#fff;font:700 54px Lato,sans-serif;box-shadow:0 6px 24px rgba(0,0,0,.12)}
+.photo{position:relative}.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.links{margin-top:14px;font-size:15px}
+.links a{margin-right:4px}
+.links .sep{color:var(--line);margin:0 6px}
+@media (max-width:640px){
+  .hero{grid-template-columns:1fr;gap:20px;text-align:center;padding-top:32px}
+  .photo{margin:0 auto;width:150px;height:150px;font-size:42px;grid-row:1}
+  .hero > div:first-child{grid-row:2}
+}
+
+/* sections */
+section{padding:30px 0;border-top:1px solid var(--line);scroll-margin-top:60px}
+h2{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:26px;margin:0 0 18px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+
+/* news */
+.news{list-style:none;margin:0;padding:0}
+.news li{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:7px 0}
+.news .when{color:var(--muted);font-size:14px;font-weight:700}
+@media (max-width:520px){.news li{grid-template-columns:1fr;gap:0}}
+
+/* interests */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px}
+
+/* publications */
+.pub{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.pub:last-child{border-bottom:0}
+.pub .num{color:var(--muted);font-weight:700}
+.pub .ttl{font-weight:700}
+.pub .auth{font-size:15px}
+.pub .auth .me{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.pub .venue{font-style:italic;font-size:15px;color:var(--muted)}
+.badge{display:inline-block;font-size:12px;font-weight:700;font-style:normal;padding:1px 8px;border-radius:6px;background:var(--badge-bg);color:var(--badge-tx);margin-left:6px;vertical-align:1px}
+.badge.oral{background:var(--oral-bg);color:var(--oral-tx)}
+.plinks{font-size:14px;margin-top:2px}
+.subhead{font-size:15px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:18px 0 4px}
+
+/* entries */
+.entry{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:10px 0}
+.entry .org{font-weight:700}
+.entry .when{color:var(--muted);font-size:14px;white-space:nowrap;text-align:right}
+.entry .role{grid-column:1/-1;font-size:15px}
+.entry .desc{grid-column:1/-1;font-size:15px;color:var(--muted)}
+@media (max-width:520px){.entry{grid-template-columns:1fr}.entry .when{text-align:left}}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.proj{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--soft);transition:transform .15s,border-color .15s}
+.proj:hover{transform:translateY(-2px);border-color:var(--accent)}
+.proj a{font-weight:700}
+.proj p{margin:4px 0 0;font-size:14px;color:var(--muted)}
+.proj .lang{font-size:12px;color:var(--accent2);margin-top:6px;font-weight:700}
+
+footer{padding:28px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="page">
+  <span class="brand">Turrnum Shahzadi</span>
+  <nav class="menu">
+    <a href="#news">News</a><a href="#publications">Publications</a><a href="#projects">Projects</a>
+    <a href="#education">Education</a><a href="#experience">Experience</a><a href="cv.pdf">CV</a>
+  </nav>
+</div></div>
+
+<main class="page">
+
+<!-- ===== Intro ===== -->
+<div class="hero">
+  <div>
+    <h1>Turrnum Shahzadi</h1>
+    <p class="title">Ph.D. Candidate · Tokyo Metropolitan University</p>
+    <p>I am a third-year Ph.D. candidate in Electrical Engineering and Computer Science at
+      <a href="https://www.tmu.ac.jp/english/">Tokyo Metropolitan University</a>, advised by Prof. Norio Tagawa.
+      My research develops deep learning and probabilistic methods for <strong>medical image and video analysis</strong>.</p>
+    <p>My doctoral work detects <strong>fasciculations</strong>, a diagnostic marker of ALS, in muscle ultrasound video using
+      black-box variational inference and deep generative modelling, in clinical collaboration with
+      Dr. Kota Bokuda at Tokyo Metropolitan Neurological Hospital. I have also worked on MRI-based lumbar spine analysis
+      and on building annotated clinical video datasets.</p>
+    <p>Before my Ph.D., I was a lecturer at the University of Gujrat, Pakistan, where I taught programming and
+      supervised student ML/DL projects.</p>
+    <div class="links">
+      <a href="cv.pdf">CV</a><span class="sep">/</span>
+      <a href="mailto:turrnum@gmail.com">Email</a><span class="sep">/</span>
+      <a href="https://scholar.google.com/citations?user=krm5aoQAAAAJ&amp;hl=en">Google Scholar</a><span class="sep">/</span>
+      <a href="https://github.com/ShzdiTrnum">GitHub</a><span class="sep">/</span>
+      <a href="https://www.linkedin.com/in/turrnum-shahzadi/">LinkedIn</a>
+    </div>
+  </div>
+  <!-- Put your photo in the repository as photo.jpg. Until then, your initials are shown. -->
+  <div class="photo"><img src="photo.jpg" alt="Turrnum Shahzadi" onerror="this.remove()"><span>TS</span></div>
+</div>
+
+<!-- ===== News ===== -->
+<section id="news">
+  <h2>News</h2>
+  <ul class="news">
+    <li><span class="when">2026</span><span>Paper on structured variational inference for fasciculation motion estimation accepted to <em>Springer CCIS</em>.</span></li>
+    <li><span class="when">2026</span><span>Gave an <strong>oral presentation</strong> at <strong>VISAPP 2026</strong> in Marbella, Spain.</span></li>
+    <li><span class="when">2025</span><span>Presented at the <strong>IEEE International Ultrasonics Symposium (IUS) 2025</strong> in Utrecht, the Netherlands.</span></li>
+    <li><span class="when">2025</span><span>Oriented Racket Database (ORDB) paper published at <strong>ACM MMSports 2025</strong>.</span></li>
+    <li><span class="when">2024–25</span><span>Received internal research grants from Tokyo Metropolitan University (¥800,000 total) for ALS diagnosis projects.</span></li>
+    <li><span class="when">2024</span><span>Started my Ph.D. at Tokyo Metropolitan University (Tagawa Lab).</span></li>
+  </ul>
+</section>
+
+<!-- ===== Interests ===== -->
+<section id="interests">
+  <h2>Research Interests</h2>
+  <div class="chips">
+    <span class="chip">Medical image &amp; video analysis</span>
+    <span class="chip">AI for clinical decision support</span>
+    <span class="chip">Variational inference</span>
+    <span class="chip">Uncertainty-aware deep learning</span>
+    <span class="chip">Motion estimation &amp; optical flow</span>
+    <span class="chip">Neurological disease (ALS)</span>
+    <span class="chip">MRI segmentation</span>
+    <span class="chip">Clinical dataset construction</span>
+  </div>
+</section>
+
+<!-- ===== Publications ===== -->
+<section id="publications">
+  <h2>Publications</h2>
+
+  <div class="pub"><div class="num">[6]</div><div>
+    <div class="ttl">Structured Variational Inference for Radius-Dependent Rotational Motion Estimation of Fasciculations in ALS Muscle Ultrasound</div>
+    <div class="auth"><span class="me">Turrnum Shahzadi</span>, J. Zhou, K. Bokuda, N. Tagawa</div>
+    <div class="venue">Springer CCIS, 2026 <span class="badge">Accepted</span></div>
+  </div></div>
+
+  <div class="pub"><div class="num">[5]</div><div>
+    <div class="ttl">Fasciculation Detection in Ultrasound Images for ALS Diagnosis Based on BBVI</div>
+    <div class="auth"><span class="me">Turrnum Shahzadi</span>, J. Zhou, K. Bokuda, N. Tagawa</div>
+    <div class="venue">In VISAPP, 2026 <span class="badge oral">Oral</span></div>
+    <div class="plinks">[<a href="https://www.scitepress.org/PublishedPapers/2026/146230/">Paper</a>]</div>
+  </div></div>
+
+  <div class="pub"><div class="num">[4]</div><div>
+    <div class="ttl">Fasciculation Detection in Ultrasound Images for ALS Diagnosis Using BBVI</div>
+    <div class="auth"><span class="me">Turrnum Shahzadi</span>, S. Tarashima, N. Tagawa, K. Bokuda</div>
+    <div class="venue">In IEEE International Ultrasonics Symposium (IUS), 2025</div>
+    <div class="plinks">[<a href="https://ieeexplore.ieee.org/abstract/document/11201500">Paper</a>]
+      [<a href="https://github.com/ShzdiTrnum/Fasciculation-Simulation">Code</a>]</div>
+  </div></div>
+
+  <div class="pub"><div class="num">[3]</div><div>
+    <div class="ttl">Oriented Racket Database (ORDB): Annotated Dataset for Rotated Racket Detection in Badminton</div>
+    <div class="auth">M. A. Haq*, X. Sun*, <span class="me">Turrnum Shahzadi*</span>, B. Zhang, S. Tarashima, N. Tagawa</div>
+    <div class="venue">In ACM MMSports Workshop, 2025 &nbsp;·&nbsp; *equal contribution</div>
+    <div class="plinks">[<a href="https://dl.acm.org/doi/pdf/10.1145/3728423.3759409">Paper</a>]</div>
+  </div></div>
+
+  <div class="pub"><div class="num">[2]</div><div>
+    <div class="ttl">Blockchain Breakthroughs in Healthcare: Applications and Challenges</div>
+    <div class="auth">F. Majeed, A. Siddique, U. Shafique, <span class="me">Turrnum Shahzadi</span></div>
+    <div class="venue">Book chapter in <em>Cybersecurity and Data Management Innovations for Healthcare</em>, 2024</div>
+  </div></div>
+
+  <div class="pub"><div class="num">[1]</div><div>
+    <div class="ttl">Nerve Root Compression Analysis to Find Lumbar Spine Stenosis on MRI Using CNN</div>
+    <div class="auth"><span class="me">Turrnum Shahzadi</span>, M. U. Ali, F. Majeed, M. U. Sana, R. Martínez Diaz, Md A. Samad, I. Ashraf</div>
+    <div class="venue"><em>Diagnostics</em>, 13(18), 2975, 2023 <span class="badge">Journal</span></div>
+    <div class="plinks">[<a href="https://www.mdpi.com/2075-4418/13/18/2975/pdf?version=1695017701">Paper</a>]
+      [<a href="https://github.com/ShzdiTrnum/CNN-LSS-Detection">Code</a>]</div>
+  </div></div>
+
+  <div class="subhead">Under review</div>
+  <div class="pub"><div class="num">–</div><div>
+    <div class="ttl">Landmark-Aware Instance Segmentation of MR Sagittal Images for Diagnosing Lumbar Spinal Deformations</div>
+    <div class="auth"><span class="me">Turrnum Shahzadi</span>, N. Tagawa, S. Tarashima, M. U. Ali, R. Akram, Z. Talib</div>
+    <div class="venue">Computers, Materials &amp; Continua, under review</div>
+  </div></div>
+
+  <p class="small muted">See also <a href="https://scholar.google.com/citations?user=krm5aoQAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+</section>
+
+<!-- ===== Projects ===== -->
+<section id="projects">
+  <h2>Open-Source Projects</h2>
+  <div class="projects">
+    <div class="proj"><a href="https://github.com/ShzdiTrnum/Fasciculation-Annotator">Fasciculation Annotator</a>
+      <p>Desktop tool for frame-accurate annotation of events in ultrasound video, with ROI drawing and MP4/CSV export.</p><div class="lang">Python · PySide6 · OpenCV</div></div>
+    <div class="proj"><a href="https://github.com/ShzdiTrnum/Fasciculation-SVD-Optical-Flow">SVD + Optical Flow Analysis</a>
+      <p>Background suppression and Farnebäck optical flow to extract rotation waveforms from ALS ultrasound.</p><div class="lang">Python · OpenCV</div></div>
+    <div class="proj"><a href="https://github.com/ShzdiTrnum/Fasciculation-LK-Ultrasound">Lucas–Kanade Registration</a>
+      <p>Affine registration with global motion compensation; classical baseline for fasciculation detection.</p><div class="lang">Python</div></div>
+    <div class="proj"><a href="https://github.com/ShzdiTrnum/Optical-Flow">Ring-wise Rotation Estimation</a>
+      <p>Dense optical flow to estimate per-ring rotational motion in synthetic and real ultrasound video.</p><div class="lang">Python</div></div>
+    <div class="proj"><a href="https://github.com/ShzdiTrnum/Fasciculation-Simulation">Fasciculation Simulation</a>
+      <p>Synthetic video of rotating concentric rings that mimics fasciculation-like motion.</p><div class="lang">Python</div></div>
+    <div class="proj"><a href="https://github.com/ShzdiTrnum/CNN-LSS-Detection">Spinal Stenosis Grading</a>
+      <p>Custom CNN grading lumbar spinal stenosis from axial MRI (code for the <em>Diagnostics</em> paper).</p><div class="lang">Python · Deep learning</div></div>
+    <div class="proj"><a href="https://github.com/ShzdiTrnum/Mask-RCNN-Lumbar-Vertebral-Segmentation">Vertebral Segmentation Baseline</a>
+      <p>Mask R-CNN (ResNet-101-FPN) baseline for vertebral segmentation in sagittal T2 MRI.</p><div class="lang">Python · Instance segmentation</div></div>
+  </div>
+</section>
+
+<!-- ===== Education ===== -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="entry"><span class="org">Tokyo Metropolitan University</span><span class="when">2024.4 – 2027.9 (expected)</span>
+    <span class="role">Ph.D. in Electrical Engineering and Computer Science · Supervisor: Prof. Norio Tagawa</span>
+    <span class="desc">Dissertation: detection of ALS-related fasciculations in ultrasound video using black-box variational inference and deep generative modelling.</span></div>
+  <div class="entry"><span class="org">University of Gujrat, Pakistan</span><span class="when">2018.9 – 2021.11</span>
+    <span class="role">M.S. in Information Technology · Supervisor: Prof. Fiaz Majeed</span>
+    <span class="desc">Thesis: lumbar spine classification in MRI with custom CNNs. Government of Punjab Graduate Merit Scholarship.</span></div>
+  <div class="entry"><span class="org">University of Gujrat, Pakistan</span><span class="when">2016 – 2018</span>
+    <span class="role">M.Sc. in Information Technology</span></div>
+</section>
+
+<!-- ===== Experience ===== -->
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="entry"><span class="org">Tagawa Lab, Tokyo Metropolitan University</span><span class="when">2024.4 – Now</span>
+    <span class="role">Doctoral Researcher</span>
+    <span class="desc">Ultrasound dataset collection and annotation with Tokyo Metropolitan Neurological Hospital; BBVI and 3D-CNN models for fasciculation detection; mentoring junior lab members.</span></div>
+  <div class="entry"><span class="org">Funterra Kids School, Tokyo</span><span class="when">2025.12 – Now</span>
+    <span class="role">Programming Instructor</span>
+    <span class="desc">Scratch, Minecraft and Visual Basic for young learners in an English-medium setting.</span></div>
+  <div class="entry"><span class="org">Mirai Minds Program, Rugby School Japan</span><span class="when">2026.4 – 2026.9</span>
+    <span class="role">Robotics Instructor</span>
+    <span class="desc">Project-based robotics and programming classes.</span></div>
+  <div class="entry"><span class="org">University of Gujrat, Pakistan</span><span class="when">2021.11 – 2024.2</span>
+    <span class="role">Lecturer, Department of Information Technology</span>
+    <span class="desc">Taught programming, computer networks, network security, web systems and mobile app development. Supervised 15+ final-year ML/DL projects.</span></div>
+</section>
+
+<!-- ===== Service & Awards ===== -->
+<section id="service">
+  <h2>Service &amp; Awards</h2>
+  <div class="entry"><span class="org">Peer reviewer</span><span class="when">2024 – Now</span>
+    <span class="desc"><em>Computers and Electrical Engineering</em> (Elsevier); <em>Journal of Imaging Informatics in Medicine</em> (Springer)</span></div>
+  <div class="entry"><span class="org">Internal research grants, Tokyo Metropolitan University</span><span class="when">2024, 2025</span>
+    <span class="desc">¥800,000 total across two ALS diagnosis projects</span></div>
+  <div class="entry"><span class="org">Outstanding Faculty Performance recognition, University of Gujrat</span><span class="when">2023</span></div>
+  <div class="entry"><span class="org">Education Committee Member, Sea Dragons Gavel Club (Toastmasters International)</span><span class="when">2026.6 – Now</span>
+    <span class="desc">Volunteer mentor giving feedback on speeches to young members.</span></div>
+</section>
+
+</main>
+
+<footer>© 2026 Turrnum Shahzadi · Tokyo, Japan</footer>
+</body>
+</html>
